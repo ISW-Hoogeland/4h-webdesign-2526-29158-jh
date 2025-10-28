@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Overzicht Leertaak 3</title>
+  <link rel="stylesheet" href="stijl.css">
+</head>
+
+<body>
+    <header>
+        
+    <h1>Leertaak 3: Bestanden, Menu's en Afbeeldingen</h1>
+    </header>
+    <nav>
+        <ul>
+        <li><a href="collage.html">🏠</a></li>
+        <li><a href="bronnen.html">bronnen</a></li>
+        <li><a href="index.html">index</a></li></ul>
+    </nav> 
+    <main>
+    <h2>Wat heb je geleerd?</h2>
+    <p>
+        In deze leertaak heb je geleerd hoe je <strong>bestanden koppelt</strong> met relatieve en absolute paden, hoe je een <strong>navigatiemenu</strong> maakt en stijlt, en hoe je <strong>afbeeldingen, lijstjes en tabellen</strong> toevoegt aan een website.  
+        Je hebt ook kennisgemaakt met verschillende <strong>afbeeldingsformaten</strong> en hun eigenschappen, en je hebt geleerd wat <strong>tekencoderingen</strong> zijn en waarom <code>UTF-8</code> de standaard is.  
+    </p>
+
+    <h3>Menu's maken</h3>
+    <p>
+        Met een <code>&lt;nav&gt;</code>-element maak je een menu waarin links (<code>&lt;a&gt;</code>) naar andere pagina's staan. Vaak gebruik je een lijst voor de structuur.
+    </p>
+    <code>
+        &lt;nav&gt;<br>
+        &nbsp;&nbsp;&lt;ul&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="index.html"&gt;Samenvatting&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="collage.html"&gt;Collage&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="bronnen.html"&gt;Bronnen&lt;/a&gt;&lt;/li&gt;<br>
+        &nbsp;&nbsp;&lt;/ul&gt;<br>
+        &lt;/nav&gt;
+    </code>
+    <p>
+        Met CSS kun je dit menu horizontaal zetten en stijlen.
+        Hiervoor zijn er verschillende manieren waaronder <code>flexboxes</code>. Dit is een relatief nieuwe manier die in 2009 werd toegevoegd. Pas in 2017 werd het ook de manier waarop het aangeraden wordt om te doen.
+    </p>
+
+    <code>
+        nav ul { <br>
+            &nbsp;&nbsp;display: flex; <br>
+            &nbsp;&nbsp;gap: 18px; <br>
+            &nbsp;&nbsp;list-style: none; <br>
+        }
+    </code>
+
+    <h3>Afbeeldingen</h3>
+    <p>Er zijn twee soorten afbeeldingen. <strong>Rasterafbeeldingen</strong> afbeeldingen gebruiken pixels om het plaatje te laten zien. Elke individuele pixel wordt opgeslagen in RGB waardoor de plaatjes best groot kunnen worden. <strong>Compressie</strong> wordt daarom gebruikt om de bestanden kleiner te maken. Hierin heb je <strong>lossy</strong> (met verlies) en <strong>lossless</strong> (zonder verlies). </p>
+    <p>Het tweede soort afbeeldingen zijn <strong>vector</strong> afbeeldingen. Deze bestaan uit wiskundige notaties om vormen te maken. Hierdoor kunnen ze oneindig vergroot en verkleind worden zonder kwaliteit verlies. </p>
+    <ul>
+        <li><strong>JPEG:</strong> geschikt voor foto's, lossy compressie.</li>
+        <li><strong>PNG:</strong> lossless compressie, ondersteunt transparantie.</li>
+        <li><strong>GIF:</strong> eenvoudige animaties, beperkt aantal kleuren.</li>
+        <li><strong>SVG:</strong> vectorbestand, oneindig schaalbaar zonder kwaliteitsverlies.</li>
+        <li><strong>WebP/AVIF:</strong> moderne formaten, combineren hoge kwaliteit met kleinere bestandsgrootte.</li>
+    </ul>
+    <p>Afbeeldingen zet je altijd in een mapje voordat je ze op je website zet. Dit doe je zodat je niet zomaar een afbeelding kwijt raakt. Daarna kun je de afbeelding in de HTML zetten met de <code>img</code>-tag. Zorg er altijd voor dat je het <code>alt</code>-attribuut invult met een korte beschrijving van de afbeelding.</p>
+    <code>&lt;img src="afbeeldingen/foto.jpg" alt="beschrijving" width="200"&gt;</code>
+
+    <h3>Relatieve en absolute paden</h3>
+    <p>
+        Een pad geeft aan waar een bestand staat. Met een <strong>relatief pad</strong> verwijs je vanaf de locatie van je HTML-bestand. Met een <strong>absoluut pad</strong> verwijs je naar de volledige locatie of URL. Om een mapje in te gaan schrijf je gewoon de naam van de map <code>afbeeldingen/</code> en om een mapje uit te gaan gebruik je puntjes <code>../</code>
+    </p>
+    <ul>
+        <li>Relatief pad: <code>&lt;img src="afbeeldingen/boom.jpg" alt="boom"&gt;</code></li>
+        <li>Absoluut pad: <code>&lt;img src="https://voorbeeld.nl/boom.jpg" alt="boom"&gt;</code></li>
+    </ul>
+
+    <h3>Tabellen</h3>
+    <p> 
+        Tabellen in HTML bestaan uit een aantal tags die samen werken om een tabel te vormen. Hierbij gebruik je altijd eerst de <code>table</code>-tag om aan te geven dat er een tabel komt. Daarna vul je de tabel met rijen <code>tr</code> (Table Row). In de rijen zetten we voor de hopjes een tabel kop <code>th</code> (Tabel Header) en in de andere rijen de cellen <code>td</code> (Tabel Data).
+    </p>
+    <code>
+<code>
+        &lt;table&gt;<br>
+        &nbsp;&nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Kolom 1&lt;/th&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Kolom 2&lt;/th&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Kolom 3&lt;/th&gt;<br>
+        &nbsp;&nbsp;&lt;/tr&gt;<br>
+        &nbsp;&nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 2, kolom 1&lt;/td&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 2, kolom 2&lt;/td&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 2, kolom 3&lt;/td&gt;<br>
+        &nbsp;&nbsp;&lt;/tr&gt;<br>
+        &nbsp;&nbsp;&lt;tr&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 3, kolom 1&lt;/td&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 3, kolom 2&lt;/td&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;rij 3, kolom 3&lt;/td&gt;<br>
+        &nbsp;&nbsp;&lt;/tr&gt;<br>
+        &lt;/table&gt;
+        </code>
+
+    </code>
+    
+
+    <h3>Tekencoderingen</h3>
+    <p>
+        Computers slaan tekens op in bytes, een computer eenheid. Er zijn dan tabellen die de computer notatie omzetten naar mensen notatie. 
+    </p>
+    <ul>
+        <li><strong>ASCII:</strong> oudere standaard met 128 tekens.</li>
+        <li><strong>ISO-8859-1:</strong> uitbreiding voor West-Europese talen op de ASCII tabel.</li>
+        <li><strong>Unicode:</strong> universele standaard die tekens van alle talen, symbolen en emoji kan beschrijven.</li>
+        <li><strong>UTF-8:</strong> moderne standaard, ondersteunt vrijwel alle tekens wereldwijd. Aanbevolen voor HTML (<code>&lt;meta charset="UTF-8"&gt;</code>).</li>
+    </ul>
+
+    
+
+    <h2>Begrippenlijst</h2>
+    <div class="definition-list">
+        <div class="definition">
+            <div class="definition-title">Relatief pad</div>
+            <div class="definition-text">Een verwijzing naar een bestand vanuit de map van het HTML-bestand.</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Absoluut pad</div>
+            <div class="definition-text">Een volledige verwijzing naar een bestand, inclusief domein of hele bestandslocatie.</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Navigatie</div>
+            <div class="definition-text">Een menu op een website waarmee je naar verschillende pagina's kunt klikken.</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Afbeeldingsformaat</div>
+            <div class="definition-text">De manier waarop een afbeelding wordt opgeslagen, bijvoorbeeld JPEG, PNG of SVG.</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Lossy</div>
+            <div class="definition-text">Compressie waarbij informatie verloren gaat (klein bestand, maar minder kwaliteit).</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Lossless</div>
+            <div class="definition-text">Compressie zonder kwaliteitsverlies (bestand blijft groter).</div>
+        </div>
+        <div class="definition">
+            <div class="definition-title">Tekencodering</div>
+            <div class="definition-text">De standaard die bepaalt hoe bits omgezet worden naar tekens, zoals ASCII of UTF-8.</div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Samenvatting week 3</p>
+    </footer>
+</body>
+</html>
