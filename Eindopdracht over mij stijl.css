@@ -31,6 +31,7 @@ nav {
     padding: 10px 14px;
     margin: 16px 0 24px 0;
     text-align: center;
+    grid-area: nav;
 }
 nav ul { 
     list-style: none; 
@@ -48,6 +49,13 @@ header h1 {
     margin: 0; font-size: 2.2rem; 
 }
 body {
+    display:grid;
+    grid-template-areas: 
+    "header "
+    "nav "
+    "main "
+    "footer "
+    ;
     background-color: var(--bg-light);
     color: var(--text-dark);
     font-family: var(--font-main);
@@ -60,7 +68,7 @@ h1 {
     padding: 26px;
     border-radius: 22px;
     text-align: center;
-    font-size: .2rem; 
+    font-size: 2rem; 
 }
 
 h2 {
@@ -77,6 +85,23 @@ header {
     border-radius: 12px;
     text-align: center;
     margin-bottom: 16px;
+    grid-area: header;
+}
+footer {
+    background-color: var(--h1-bg);
+    color: var(--h1-text);
+    padding: 16px;
+    border-radius: 16px;
+    text-align: center;
+    grid-area: footer;
+}
+main{
+    color: var(--h1-text);
+    text-align: center;
+    grid-area: main;
+     padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 220px;
 }
 
 
